@@ -349,7 +349,7 @@ export default {
       surname: "",
       name: "",
       date: "",
-      phone: "+7",
+      phone: "7",
       clientItems: ["VIP", "Проблемные", "ОМС"],
       status: [],
       doctors: ["Иванов", "Захаров", "Чернышева"],
@@ -365,8 +365,6 @@ export default {
   },
   methods: {
     onlyNumbers() {
-      if (this.phone === "" || this.phone === undefined || this.phone == "+")
-        this.phone = this.phone.replace(this.phone, "+7");
       this.phone = this.phone.replace(/[^+0-9]/gi, "");
     },
     submit() {
@@ -390,8 +388,8 @@ export default {
     },
     phone: {
       required,
-      maxLength: maxLength(12),
-      minLength: minLength(12),
+      maxLength: maxLength(11),
+      minLength: minLength(11),
       numeric
     },
     status: {
